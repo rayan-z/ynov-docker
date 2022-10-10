@@ -1,4 +1,13 @@
-FROM nodejscn/node
-ADD . .
-RUN ls
-CMD node run.js
+FROM node
+
+WORKDIR /usr/src/app
+
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+CMD [ "node", "run.js" ]
