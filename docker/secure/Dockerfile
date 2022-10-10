@@ -17,9 +17,9 @@ RUN PIPENV_VENV_IN_PROJECT=1 pipenv sync
 FROM python:3.8-alpine as runtime
 
 # Create the user ynov
-RUN addgroup --gid 1000 ynov
+RUN addgroup --gid 1001 ynov
 RUN adduser --disabled-password --home /home/ynov --ingroup ynov \
-            --uid 1000 ynov
+            --uid 1001 ynov
 
 USER ynov
 WORKDIR /home/ynov
